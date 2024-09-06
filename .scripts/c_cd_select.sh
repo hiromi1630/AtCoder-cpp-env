@@ -15,6 +15,12 @@ contest_dir=$(dirname "$PWD")
 # 移動したい問題ディレクトリを入力
 read -p "移動したい問題を入力してください (例: a, c1): " target_problem
 
+# 入力が空であるかどうかを確認
+if [[ -z "$target_problem" ]]; then
+    echo "エラー: 問題が入力されていません。"
+    return 1
+fi
+
 # 指定された問題ディレクトリが存在するか確認し、存在すれば移動
 target_dir="$contest_dir/$target_problem"
 if [[ -d "$target_dir" ]]; then

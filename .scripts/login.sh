@@ -15,7 +15,6 @@ if oj login --check https://atcoder.jp/ | grep -q "You are not signed in." ; the
 else
     oj_logged_in=true
 fi
-rm -rf "${WORKSPACE_DIR}/test"
 
 # 両方にログインしている場合メッセージを表示
 if $acc_logged_in && $oj_logged_in; then
