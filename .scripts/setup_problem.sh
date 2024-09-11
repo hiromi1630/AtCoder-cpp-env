@@ -53,14 +53,10 @@ for PROBLEM_DIR in ${WORKING_DIR}/${contest_id}/*/; do
     fi
 done
 
-# 問題aのディレクトリに移動
-if [ -d "${contest_id}/a" ]; then
-    cd "${contest_id}/a"
-else
-    # a問題がない場合は最も若い問題に移動
-    first_problem_dir=$(find "${contest_id}" -type d -name '[a-z]' | sort | head -n 1)
-    cd "$first_problem_dir"
-fi
+# 最も若いディレクトリに移動
+first_problem_dir=$(find "${contest_id}" -mindepth 1 -maxdepth 1 -type d | sort | head -n 1)
+
+cd "$first_problem_dir"
 
 #ファイルを開く
 if command -v code &> /dev/null; then
