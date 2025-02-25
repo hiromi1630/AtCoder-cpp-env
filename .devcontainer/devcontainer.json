@@ -13,7 +13,7 @@
     "containerEnv": {
         "WORKSPACE_DIR": "${containerWorkspaceFolder}"
     },
-    "postAttachCommand": "${containerWorkspaceFolder}/.scripts/login.sh",
+    "postAttachCommand": "acc login && oj login https://atcoder.jp",
 
     "customizations": {
         "vscode": {

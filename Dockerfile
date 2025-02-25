@@ -13,17 +13,11 @@ RUN apt update && apt install -y --no-install-recommends \
 # AtCoder用ツールのインストール    
 RUN pip3 install online-judge-tools && \
     npm install -g atcoder-cli && \
-    acc config default-task-choice all
+    acc config default-task-choice all && \
+    acc config default-test-dirname-format test
 
-# タイムゾーンを日本時間に設定
-ENV TZ=Asia/Tokyo    
-    
-#設定ファイルのコピー
-COPY .config/alias.sh /etc/profile.d/alias.sh
-COPY .config/bash_custom.sh /etc/profile.d/bash_custom.sh
+# テンプレート設定
+RUN mkdir /root/.config/atcoder-cli-nodejs/cpp
+COPY ./templates /root/.config/atcoder-cli-nodejs/cpp/
+RUN acc config default-template cpp
 
-#大文字小文字を区別せずに補完
-# bush設定ファイルの作成
-RUN echo 'set completion-ignore-case on' >> /etc/inputrc && \
-    cat /etc/profile.d/alias.sh >> /etc/bash.bashrc && \
-    cat /etc/profile.d/bash_custom.sh >> /etc/bash.bashrc
