@@ -8,6 +8,7 @@ RUN apt update && apt install -y --no-install-recommends \
     python3-pip \
     jq \
     gdb \
+    libboost-all-dev \
     && rm -rf /var/lib/apt/lists/*
     
 # AtCoder用ツールのインストール    

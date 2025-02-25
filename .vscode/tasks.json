@@ -2,69 +2,6 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "-a.テスト",
-            "type": "shell",
-            "command": "bash",
-            "args": [
-                "${workspaceFolder}/.scripts/t_test.sh",
-                "${file}"
-            ],
-            "problemMatcher": [],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared"
-            }
-        },
-        {
-            "label": "-b.提出",
-            "type": "shell",
-            "command": "bash",
-            "args": [
-                "${workspaceFolder}/.scripts/t_submit.sh",
-                "${file}"
-            ],
-            "problemMatcher": [],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared",
-            }
-        },
-        {
-            "label": "-c.ダウンロード",
-            "type": "shell",
-            "command": "bash",
-            "args": [
-                "${workspaceFolder}/.scripts/setup_problem.sh",
-                "task"
-            ],
-            "problemMatcher": [],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared",
-            }
-        },
-        {
-            "label": "-d.ログイン",
-            "type": "shell",
-            "command": "bash",
-            "args": [
-                "${workspaceFolder}/.scripts/login.sh"
-            ],
-            "problemMatcher": [],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared",
-            }
-        },
-        {
             "label": "compileBeforeDebug",
             "type": "shell",
             "command": "g++",
@@ -75,6 +12,8 @@
                 "-g",
                 "-I",
                 "${workspaceFolder}/.include",
+                "-I",
+                "/usr/include",
                 "-o",
                 "${fileDirname}/a.out"
             ],

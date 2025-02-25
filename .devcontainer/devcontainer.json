@@ -23,7 +23,7 @@
             },
             "extensions": [
                 "ms-vscode.cpptools",
-                "forbeslindesay.forbeslindesay-taskrunner"
+                "oderwat.indent-rainbow"
             ]
         }
     }
