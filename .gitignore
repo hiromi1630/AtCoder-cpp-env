@@ -1,13 +1,3 @@
-ABC/*
-!ABC/.gitkeep
-
-ARC/*
-!ARC/.gitkeep
-
-AGC/*
-!AGC/.gitkeep
-
-Others/*
-!Others/.gitkeep
-
-.DS_Store
+abc*/
+arc*/
+agc*/
